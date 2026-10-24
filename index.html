@@ -2,530 +2,548 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080808">
-  <meta name="description" content="Alighepe Official — bisnis, teknologi, dan pengembangan diri.">
-  <title>Alighepe Official | Personal Branding</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="Alighepe Official — Business, Technology & Growth">
+<title>Alighepe Official</title>
 
-  <style>
-    :root {
-      --bg: #080808;
-      --panel: #111111;
-      --text: #f5f5f5;
-      --muted: #a5a5a5;
-      --line: #303030;
-      --silver: #c9c9c9;
-    }
+<style>
+:root {
+  --bg: #070809;
+  --panel: #101216;
+  --text: #f5f6fa;
+  --muted: #a4a8b2;
+  --silver: #dce4f5;
+  --line: #272b34;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
-    }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-    .container {
-      width: min(1050px, 90%);
-      margin: auto;
-    }
+.container {
+  width: min(1050px, 90%);
+  margin: auto;
+}
 
-    header {
-      border-bottom: 1px solid var(--line);
-      background: #080808;
-    }
+header {
+  position: relative;
+  z-index: 5;
+  background: rgba(7,8,9,.9);
+  border-bottom: 1px solid var(--line);
+}
 
-    nav {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
+nav {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
 
-    .logo {
-      font-size: 1.1rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-    }
+.logo {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
 
-    .logo span,
-    h1 span {
-      color: var(--silver);
-    }
+.logo span, h1 span { color: #aebbd5; }
 
-    .nav-link {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
+.nav-link {
+  color: var(--muted);
+  font-size: .9rem;
+}
 
-    /* HERO DAN CAHAYA OMBAK BERGERAK */
-    .hero {
-      min-height: 76vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 0;
-      position: relative;
-      overflow: hidden;
-      isolation: isolate;
-    }
+/* HERO: LATAR CAHAYA BERGELOMBANG */
+.hero {
+  min-height: 590px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 85px 0 75px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 30%,
+      rgba(54,69,97,.16), transparent 43%),
+    linear-gradient(180deg,#090b10,#070809 90%);
+}
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      z-index: 0;
-      top: 12%;
-      left: -120%;
-      width: 140%;
-      height: 260px;
-      pointer-events: none;
-      opacity: 0;
-      background:
-        radial-gradient(
-          ellipse at center,
-          rgba(170, 195, 255, 0.12),
-          transparent 68%
-        ),
-        linear-gradient(
-          170deg,
-          transparent 40%,
-          rgba(200, 220, 255, 0.08) 45%,
-          rgba(255, 255, 255, 0.78) 49%,
-          rgba(175, 200, 255, 0.16) 52%,
-          transparent 60%
-        );
-      filter: blur(10px);
-      transform: rotate(-7deg);
-      animation: lightSweep 8s ease-in-out infinite;
-    }
+/* Cahaya kabut bergerak */
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 150%;
+  height: 340px;
+  top: 3%;
+  left: -150%;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(ellipse at center,
+      rgba(174,199,255,.18),
+      transparent 65%);
+  filter: blur(28px);
+  transform: rotate(-12deg);
+  animation: mistMove 9s ease-in-out infinite;
+}
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      z-index: 0;
-      top: 2%;
-      left: 50%;
-      width: 260px;
-      height: 230px;
-      transform: translateX(-50%);
-      border-radius: 50%;
-      background: radial-gradient(
-        circle,
-        rgba(180, 205, 255, 0.13),
-        rgba(180, 205, 255, 0.04) 48%,
-        transparent 72%
-      );
-      filter: blur(38px);
-      pointer-events: none;
-    }
+/* Gelombang cahaya perak */
+.light-waves {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
 
-    .hero .container {
-      position: relative;
-      z-index: 1;
-    }
+.wave {
+  position: absolute;
+  left: -30%;
+  width: 160%;
+  height: 170px;
+  border-radius: 50%;
+  border-top: 2px solid rgba(224,234,255,.65);
+  filter: drop-shadow(0 0 7px rgba(173,201,255,.7))
+          drop-shadow(0 0 22px rgba(142,177,255,.28));
+  opacity: 0;
+}
 
-    @keyframes lightSweep {
-      0% {
-        left: -120%;
-        opacity: 0;
-      }
-      15% {
-        opacity: 0.85;
-      }
-      70% {
-        opacity: 0.7;
-      }
-      100% {
-        left: 120%;
-        opacity: 0;
-      }
-    }
+.wave-one {
+  top: 23%;
+  transform: rotate(-10deg);
+  animation: waveOne 8s ease-in-out infinite;
+}
 
-    /* FOTO BULAT SEMPURNA */
-    .profile {
-      width: 145px;
-      height: 145px;
-      aspect-ratio: 1 / 1;
-      flex: 0 0 145px;
-      margin: 0 auto 25px;
-      position: relative;
-      isolation: isolate;
-      border-radius: 50%;
-      background: #111;
-      border: 1px solid rgba(220, 225, 235, 0.55);
-      box-shadow: 0 0 28px rgba(180, 205, 255, 0.12);
-    }
+.wave-two {
+  top: 35%;
+  border-top-width: 1px;
+  border-color: rgba(255,255,255,.48);
+  transform: rotate(8deg);
+  animation: waveTwo 10s ease-in-out infinite;
+  animation-delay: -3s;
+}
 
-    /* Klip foto terpisah agar foto tidak berubah bentuk */
-    .profile-frame {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      border-radius: 50%;
-      z-index: 1;
-    }
+.wave-three {
+  top: 44%;
+  border-top-width: 1px;
+  border-color: rgba(158,188,255,.55);
+  transform: rotate(-5deg);
+  animation: waveThree 7s ease-in-out infinite;
+  animation-delay: -2s;
+}
 
-    .profile-frame img {
-      display: block;
-      width: 100% !important;
-      height: 100% !important;
-      max-width: none;
-      border-radius: 50% !important;
-      object-fit: cover;
-      object-position: center;
-    }
+.wave-four {
+  top: 16%;
+  height: 230px;
+  border-top-width: 1px;
+  border-color: rgba(255,255,255,.25);
+  transform: rotate(12deg);
+  animation: waveTwo 12s ease-in-out infinite;
+  animation-delay: -6s;
+}
 
-    .profile-placeholder {
-      display: none;
-      position: absolute;
-      inset: 0;
-      align-items: center;
-      justify-content: center;
-      color: var(--silver);
-      font-size: 2.7rem;
-      font-weight: bold;
-      border-radius: 50%;
-    }
+@keyframes mistMove {
+  0% { left: -150%; opacity: 0; }
+  20% { opacity: 1; }
+  75% { opacity: .8; }
+  100% { left: 100%; opacity: 0; }
+}
 
-    /* Hanya satu garis cahaya tipis yang berputar */
-    .profile::before {
-      content: "";
-      position: absolute;
-      inset: -5px;
-      border-radius: 50%;
-      padding: 1.5px;
-      background: conic-gradient(
-        from 0deg,
-        transparent 0deg,
-        transparent 245deg,
-        rgba(255, 255, 255, 0.95) 285deg,
-        rgba(175, 205, 255, 0.7) 310deg,
-        transparent 340deg,
-        transparent 360deg
-      );
-      -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      animation: orbitGlow 5s linear infinite;
-      pointer-events: none;
-      z-index: 3;
-    }
+@keyframes waveOne {
+  0% { left: -70%; opacity: 0; transform: translateY(35px) rotate(-10deg); }
+  25% { opacity: .8; }
+  70% { opacity: .65; }
+  100% { left: 10%; opacity: 0; transform: translateY(-25px) rotate(-5deg); }
+}
 
-    .profile::after {
-      content: "";
-      position: absolute;
-      inset: -8px;
-      border-radius: 50%;
-      border: 1px solid rgba(210, 225, 255, 0.1);
-      pointer-events: none;
-      z-index: 2;
-    }
+@keyframes waveTwo {
+  0% { left: 10%; opacity: 0; transform: translateY(-20px) rotate(8deg); }
+  25% { opacity: .75; }
+  75% { opacity: .6; }
+  100% { left: -55%; opacity: 0; transform: translateY(30px) rotate(3deg); }
+}
 
-    @keyframes orbitGlow {
-      to { transform: rotate(360deg); }
-    }
+@keyframes waveThree {
+  0% { left: -50%; opacity: 0; transform: translateY(15px) rotate(-5deg); }
+  25% { opacity: .8; }
+  70% { opacity: .5; }
+  100% { left: 15%; opacity: 0; transform: translateY(-20px) rotate(-12deg); }
+}
 
-    .eyebrow {
-      color: var(--silver);
-      font-size: 0.76rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
 
-    h1 {
-      font-size: clamp(2.4rem, 8vw, 5rem);
-      line-height: 1.12;
-      letter-spacing: -2px;
-      margin-bottom: 18px;
-    }
+/* FOTO BULAT, UKURAN TETAP */
+.profile {
+  width: 150px;
+  height: 150px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto 26px;
+  position: relative;
+  isolation: isolate;
+  border-radius: 50%;
+  background: #111319;
+  border: 1px solid rgba(222,232,255,.7);
+  box-shadow:
+    0 0 20px rgba(180,205,255,.15),
+    0 0 55px rgba(135,170,255,.12);
+}
 
-    .intro {
-      color: var(--muted);
-      max-width: 620px;
-      margin: 0 auto 28px;
-    }
+.profile-frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 50%;
+}
 
-    .button {
-      display: inline-block;
-      border: 1px solid var(--silver);
-      border-radius: 7px;
-      padding: 12px 24px;
-      background: var(--text);
-      color: #080808;
-      font-weight: bold;
-      transition: 0.2s;
-      cursor: pointer;
-      font-size: 0.95rem;
-    }
+.profile-frame img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50% !important;
+}
 
-    .button:hover {
-      background: var(--silver);
-      transform: translateY(-2px);
-    }
+/* Garis cahaya tipis di sisi luar foto */
+.profile::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  padding: 1.5px;
+  background: conic-gradient(
+    transparent 0deg,
+    transparent 235deg,
+    rgba(255,255,255,.95) 280deg,
+    rgba(161,195,255,.8) 305deg,
+    transparent 335deg,
+    transparent 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: orbit 6s linear infinite;
+  pointer-events: none;
+  z-index: 3;
+}
 
-    section.content-section {
-      padding: 65px 0;
-      border-top: 1px solid var(--line);
-    }
+.profile::after {
+  content: "";
+  position: absolute;
+  inset: -9px;
+  border: 1px solid rgba(190,210,255,.13);
+  border-radius: 50%;
+  pointer-events: none;
+}
 
-    .section-title {
-      font-size: clamp(1.7rem, 5vw, 2.5rem);
-      margin-bottom: 15px;
-    }
+@keyframes orbit {
+  to { transform: rotate(360deg); }
+}
 
-    .section-desc {
-      color: var(--muted);
-      max-width: 700px;
-    }
+.eyebrow {
+  color: #c2cde2;
+  font-size: .72rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 28px;
-    }
+h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  line-height: 1.12;
+  letter-spacing: -2px;
+  margin-bottom: 18px;
+}
 
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 23px;
-      transition: border-color 0.2s, transform 0.2s;
-    }
+.intro {
+  color: var(--muted);
+  max-width: 620px;
+  margin: 0 auto 28px;
+}
 
-    .card:hover {
-      border-color: #777;
-      transform: translateY(-4px);
-    }
+.button {
+  display: inline-block;
+  border: 1px solid #cbd5e8;
+  border-radius: 30px;
+  padding: 11px 25px;
+  background: transparent;
+  color: var(--text);
+  font-weight: 600;
+  transition: .25s;
+  cursor: pointer;
+  font-size: .92rem;
+}
 
-    .card h3 {
-      margin-bottom: 9px;
-      font-size: 1.08rem;
-    }
+.button:hover {
+  background: #e7ecf7;
+  color: #08090c;
+  box-shadow: 0 0 25px rgba(180,205,255,.2);
+}
 
-    .card p {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
+section.content-section {
+  padding: 65px 0;
+  border-top: 1px solid var(--line);
+}
 
-    .number {
-      color: var(--silver);
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
-    }
+.section-title {
+  font-size: clamp(1.7rem,5vw,2.5rem);
+  line-height: 1.25;
+  margin-bottom: 15px;
+}
 
-    .contact-panel {
-      margin-top: 25px;
-      padding: 28px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: var(--panel);
-    }
+.section-desc {
+  color: var(--muted);
+  max-width: 700px;
+}
 
-    #contact-options {
-      display: none;
-      margin-top: 18px;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
 
-    #contact-options.show {
-      display: grid;
-    }
+.card {
+  background: linear-gradient(145deg,#12151b,#0c0e12);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 23px;
+  transition: .25s;
+}
 
-    .contact-link {
-      padding: 12px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      color: var(--text);
-      text-align: center;
-    }
+.card:hover {
+  border-color: #7888a5;
+  transform: translateY(-4px);
+}
 
-    .contact-link:hover {
-      border-color: var(--silver);
-      background: #1a1a1a;
-    }
+.card h3 {
+  margin-bottom: 9px;
+  font-size: 1.08rem;
+}
 
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 25px 0;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
+.card p {
+  color: var(--muted);
+  font-size: .92rem;
+}
 
-    @media (max-width: 650px) {
-      .cards { grid-template-columns: 1fr; }
-      .hero { min-height: 70vh; }
-      h1 { letter-spacing: -1px; }
-      #contact-options { grid-template-columns: 1fr; }
-      nav { min-height: 65px; }
-      .eyebrow { letter-spacing: 2.5px; }
-    }
+.number {
+  color: #c4d1e9;
+  font-size: .8rem;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
 
-    @media (prefers-reduced-motion: reduce) {
-      .hero::before,
-      .profile::before {
-        animation: none;
-      }
-      html { scroll-behavior: auto; }
-    }
-  </style>
+.contact-panel {
+  margin-top: 25px;
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+
+#contact-options {
+  display: none;
+  margin-top: 18px;
+  grid-template-columns: repeat(2,1fr);
+  gap: 12px;
+}
+
+#contact-options.show { display: grid; }
+
+.contact-link {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  text-align: center;
+}
+
+.contact-link:hover {
+  border-color: #aebbd5;
+  background: #171b23;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 25px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+@media (max-width: 650px) {
+  .cards { grid-template-columns: 1fr; }
+  .hero { min-height: 570px; }
+  h1 { letter-spacing: -1px; }
+  #contact-options { grid-template-columns: 1fr; }
+  nav { min-height: 65px; }
+  .wave { width: 200%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before, .wave, .profile::before {
+    animation: none;
+  }
+  html { scroll-behavior: auto; }
+}
+</style>
 </head>
 
 <body>
-  <header>
-    <nav class="container">
-      <a href="#" class="logo">ALIGHEPE<span>.</span></a>
-      <a href="#tentang" class="nav-link">Tentang Saya ↘</a>
-    </nav>
-  </header>
+<header>
+  <nav class="container">
+    <a href="#" class="logo">ALIGHEPE<span>.</span></a>
+    <a href="#tentang" class="nav-link">Tentang Saya ↘</a>
+  </nav>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="profile">
-          <div class="profile-frame">
-            <img
-              src="profile.jpg"
-              alt="Foto profil Alighepe Official"
-              onerror="this.parentElement.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';"
-            >
-          </div>
-          <span class="profile-placeholder">A</span>
-        </div>
-
-        <p class="eyebrow">Personal Branding • Business • Growth</p>
-        <h1>Alighepe <span>Official</span></h1>
-        <p class="intro">
-          Membangun masa depan melalui pola pikir bertumbuh,
-          kreativitas, teknologi, dan semangat berwirausaha.
-          Berproses hari ini untuk menciptakan peluang esok hari.
-        </p>
-        <a href="#tentang" class="button">Kenali Saya</a>
-      </div>
-    </section>
-
-    <section class="content-section" id="tentang">
-      <div class="container">
-        <p class="eyebrow">Tentang Saya</p>
-        <h2 class="section-title">Berpikir besar. Terus berkembang.</h2>
-        <p class="section-desc">
-          Saya tertarik pada dunia bisnis, teknologi digital, investasi,
-          dan pengembangan diri. Saya percaya bahwa kemampuan dibangun
-          melalui proses belajar, konsistensi, dan keberanian mencoba hal baru.
-        </p>
-      </div>
-    </section>
-
-    <section class="content-section" id="minat">
-      <div class="container">
-        <p class="eyebrow">Fokus & Minat</p>
-        <h2 class="section-title">Hal yang ingin saya kembangkan.</h2>
-        <div class="cards">
-          <article class="card">
-            <p class="number">01 / BUSINESS</p>
-            <h3>Entrepreneurship</h3>
-            <p>Mempelajari strategi bisnis, membangun merek, dan menciptakan peluang usaha.</p>
-          </article>
-          <article class="card">
-            <p class="number">02 / FINANCE</p>
-            <h3>Trading & Keuangan</h3>
-            <p>Mempelajari pasar keuangan, analisis, manajemen risiko, dan disiplin finansial.</p>
-          </article>
-          <article class="card">
-            <p class="number">03 / TECHNOLOGY</p>
-            <h3>Teknologi Digital</h3>
-            <p>Mengeksplorasi website, kecerdasan buatan, dan kreativitas di dunia digital.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section" id="tujuan">
-      <div class="container">
-        <p class="eyebrow">Visi Masa Depan</p>
-        <h2 class="section-title">Bertumbuh dengan tujuan.</h2>
-        <p class="section-desc">
-          Saya ingin mengembangkan kemampuan, membangun usaha yang bernilai,
-          memahami keuangan dengan bijak, dan menciptakan karya digital
-          yang bermanfaat bagi banyak orang.
-        </p>
-      </div>
-    </section>
-
-    <section class="content-section" id="kontak">
-      <div class="container">
-        <p class="eyebrow">Mari Terhubung</p>
-        <h2 class="section-title">Hubungi Saya</h2>
-        <p class="section-desc">
-          Pilih platform yang paling nyaman untuk menghubungi saya.
-        </p>
-        <div class="contact-panel">
-          <button
-            class="button"
-            id="contact-button"
-            type="button"
-            aria-expanded="false"
-            aria-controls="contact-options"
-          >Hubungi Saya +</button>
-
-          <div id="contact-options">
-            <a class="contact-link" href="https://wa.me/6285177173031"
-              target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
-            <a class="contact-link" href="https://instagram.com/guwepehasli"
-              target="_blank" rel="noopener noreferrer">Instagram ↗</a>
-            <a class="contact-link" href="mailto:ayumutoharoh@gmail.com">Email ↗</a>
-            <a class="contact-link" href="https://www.tiktok.com/@al1gp"
-              target="_blank" rel="noopener noreferrer">TikTok ↗</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      © <span id="year"></span> Alighepe Official. Dibuat dengan semangat berkembang.
+<main>
+  <section class="hero">
+    <div class="light-waves" aria-hidden="true">
+      <div class="wave wave-one"></div>
+      <div class="wave wave-two"></div>
+      <div class="wave wave-three"></div>
+      <div class="wave wave-four"></div>
     </div>
-  </footer>
 
-  <script>
-    const contactButton = document.getElementById("contact-button");
-    const contactOptions = document.getElementById("contact-options");
+    <div class="container">
+      <div class="profile">
+        <div class="profile-frame">
+          <img src="profile.jpg"
+            alt="Foto profil Alighepe Official"
+            onerror="this.parentElement.style.display='none'">
+        </div>
+      </div>
 
-    contactButton.addEventListener("click", function () {
-      const isOpen = contactOptions.classList.toggle("show");
-      contactButton.setAttribute("aria-expanded", String(isOpen));
-      contactButton.textContent = isOpen
-        ? "Tutup Kontak −"
-        : "Hubungi Saya +";
-    });
+      <p class="eyebrow">Personal Branding • Business • Growth</p>
+      <h1>Alighepe <span>Official</span></h1>
+      <p class="intro">
+        Membangun masa depan melalui pola pikir bertumbuh,
+        kreativitas, teknologi, dan semangat berwirausaha.
+        Berproses hari ini untuk menciptakan peluang esok hari.
+      </p>
+      <a href="#tentang" class="button">Kenali Saya ↘</a>
+    </div>
+  </section>
 
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-  </script>
+  <section class="content-section" id="tentang">
+    <div class="container">
+      <p class="eyebrow">Tentang Saya</p>
+      <h2 class="section-title">Berpikir besar. Terus berkembang.</h2>
+      <p class="section-desc">
+        Saya tertarik pada dunia bisnis, teknologi digital, investasi,
+        dan pengembangan diri. Saya percaya bahwa kemampuan dibangun
+        melalui proses belajar, konsistensi, dan keberanian mencoba hal baru.
+      </p>
+    </div>
+  </section>
+
+  <section class="content-section" id="minat">
+    <div class="container">
+      <p class="eyebrow">Fokus & Minat</p>
+      <h2 class="section-title">Hal yang ingin saya kembangkan.</h2>
+      <div class="cards">
+        <article class="card">
+          <p class="number">01 / BUSINESS</p>
+          <h3>Entrepreneurship</h3>
+          <p>Mempelajari strategi bisnis, membangun merek, dan menciptakan peluang usaha.</p>
+        </article>
+        <article class="card">
+          <p class="number">02 / FINANCE</p>
+          <h3>Trading & Keuangan</h3>
+          <p>Mempelajari pasar keuangan, analisis, manajemen risiko, dan disiplin finansial.</p>
+        </article>
+        <article class="card">
+          <p class="number">03 / TECHNOLOGY</p>
+          <h3>Teknologi Digital</h3>
+          <p>Mengeksplorasi website, kecerdasan buatan, dan kreativitas di dunia digital.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" id="tujuan">
+    <div class="container">
+      <p class="eyebrow">Visi Masa Depan</p>
+      <h2 class="section-title">Bertumbuh dengan tujuan.</h2>
+      <p class="section-desc">
+        Saya ingin mengembangkan kemampuan, membangun usaha yang bernilai,
+        memahami keuangan dengan bijak, dan menciptakan karya digital
+        yang bermanfaat bagi banyak orang.
+      </p>
+    </div>
+  </section>
+
+  <section class="content-section" id="kontak">
+    <div class="container">
+      <p class="eyebrow">Mari Terhubung</p>
+      <h2 class="section-title">Hubungi Saya</h2>
+      <p class="section-desc">Pilih platform yang paling nyaman untuk menghubungi saya.</p>
+
+      <div class="contact-panel">
+        <button class="button" id="contact-button"
+          type="button" aria-expanded="false"
+          aria-controls="contact-options">Hubungi Saya +</button>
+
+        <div id="contact-options">
+          <a class="contact-link" href="https://wa.me/6285177173031"
+            target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+          <a class="contact-link" href="https://instagram.com/guwepehasli"
+            target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+          <a class="contact-link" href="mailto:ayumutoharoh@gmail.com">Email ↗</a>
+          <a class="contact-link" href="https://www.tiktok.com/@al1gp"
+            target="_blank" rel="noopener noreferrer">TikTok ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    © <span id="year"></span> Alighepe Official. Dibuat dengan semangat berkembang.
+  </div>
+</footer>
+
+<script>
+const contactButton = document.getElementById("contact-button");
+const contactOptions = document.getElementById("contact-options");
+
+contactButton.addEventListener("click", function () {
+  const isOpen = contactOptions.classList.toggle("show");
+  contactButton.setAttribute("aria-expanded", String(isOpen));
+  contactButton.textContent = isOpen ? "Tutup Kontak −" : "Hubungi Saya +";
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
   </html>
-    
+  
