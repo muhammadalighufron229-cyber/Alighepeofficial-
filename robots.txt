@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Setelah website online, tambahkan baris Sitemap dengan URL sitemap.xml yang benar.
