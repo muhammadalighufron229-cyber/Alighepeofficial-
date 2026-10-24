@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#080808">
-  <meta name="description" content="Alighepe Official — personal branding, bisnis, teknologi, dan perjalanan menuju kesuksesan.">
+  <meta name="description" content="Alighepe Official — bisnis, teknologi, dan pengembangan diri.">
   <title>Alighepe Official | Personal Branding</title>
 
   <style>
@@ -47,7 +47,7 @@
 
     header {
       border-bottom: 1px solid var(--line);
-      background: rgba(8, 8, 8, 0.96);
+      background: #080808;
     }
 
     nav {
@@ -59,12 +59,13 @@
     }
 
     .logo {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 800;
       letter-spacing: 2px;
     }
 
-    .logo span {
+    .logo span,
+    h1 span {
       color: var(--silver);
     }
 
@@ -73,37 +74,159 @@
       font-size: 0.9rem;
     }
 
+    /* BAGIAN ATAS DAN CAHAYA MELINTAS */
     .hero {
       min-height: 76vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 70px 0;
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
     }
 
+    .hero::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 15%;
+      left: -80%;
+      width: 75%;
+      height: 200px;
+      background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(180, 205, 255, 0.12),
+        rgba(255, 255, 255, 0.9),
+        rgba(180, 205, 255, 0.15),
+        transparent
+      );
+      filter: blur(22px);
+      transform: rotate(-15deg);
+      pointer-events: none;
+      animation: lightSweep 6s ease-in-out infinite;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 260px;
+      height: 260px;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: rgba(150, 180, 255, 0.07);
+      filter: blur(65px);
+      pointer-events: none;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes lightSweep {
+      0% {
+        left: -80%;
+        opacity: 0;
+      }
+      15% {
+        opacity: 1;
+      }
+      100% {
+        left: 120%;
+        opacity: 0;
+      }
+    }
+
+    /* FOTO PROFIL DAN LINGKARAN CAHAYA */
     .profile {
       width: 145px;
       height: 145px;
       margin: 0 auto 25px;
       border: 2px solid var(--silver);
       border-radius: 50%;
-      overflow: hidden;
       background: #1b1b1b;
       display: grid;
       place-items: center;
+      position: relative;
+      isolation: isolate;
+      box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.15),
+        0 0 35px rgba(160, 190, 255, 0.12);
+    }
+
+    .profile::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: -12px;
+      border-radius: 50%;
+      border: 1px solid rgba(210, 225, 255, 0.35);
+      box-shadow: 0 0 20px rgba(190, 215, 255, 0.15);
+      animation: ringPulse 3s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .profile::after {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      inset: -5px;
+      border-radius: 50%;
+      padding: 3px;
+      background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        transparent 230deg,
+        #ffffff 275deg,
+        #a9caff 305deg,
+        transparent 340deg,
+        transparent 360deg
+      );
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: orbitGlow 3s linear infinite;
+      pointer-events: none;
     }
 
     .profile img {
       width: 100%;
       height: 100%;
+      border-radius: 50%;
       object-fit: cover;
+      position: relative;
+      z-index: 1;
     }
 
     .profile-placeholder {
       color: var(--silver);
       font-size: 2.7rem;
       font-weight: bold;
+    }
+
+    @keyframes orbitGlow {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes ringPulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.4;
+      }
+      50% {
+        transform: scale(1.08);
+        opacity: 1;
+      }
     }
 
     .eyebrow {
@@ -119,10 +242,6 @@
       line-height: 1.12;
       letter-spacing: -2px;
       margin-bottom: 18px;
-    }
-
-    h1 span {
-      color: var(--silver);
     }
 
     .intro {
@@ -149,7 +268,7 @@
       transform: translateY(-2px);
     }
 
-    section {
+    section.content-section {
       padding: 65px 0;
       border-top: 1px solid var(--line);
     }
@@ -176,6 +295,12 @@
       border: 1px solid var(--line);
       border-radius: 12px;
       padding: 23px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .card:hover {
+      border-color: #777;
+      transform: translateY(-4px);
     }
 
     .card h3 {
@@ -256,13 +381,25 @@
         min-height: 65px;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero::before,
+      .profile::before,
+      .profile::after {
+        animation: none;
+      }
+
+      html {
+        scroll-behavior: auto;
+      }
+    }
   </style>
 </head>
 
 <body>
   <header>
     <nav class="container">
-      <a href="#" class="logo">Alighepeofficial<span>.</span></a>
+      <a href="#" class="logo">ALIGHEPE<span>.</span></a>
       <a href="#tentang" class="nav-link">Tentang Saya ↘</a>
     </nav>
   </header>
@@ -271,13 +408,12 @@
     <section class="hero">
       <div class="container">
         <div class="profile">
-          <!-- Letakkan foto bernama profile.jpg di folder yang sama -->
           <img
             src="profile.jpg"
-            alt="Foto profil Lighepe Official"
+            alt="Foto profil Alighepe Official"
             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
           >
-          <span class="profile-placeholder" style="display:none;">L</span>
+          <span class="profile-placeholder" style="display:none;">A</span>
         </div>
 
         <p class="eyebrow">Personal Branding • Business • Growth</p>
@@ -291,7 +427,7 @@
       </div>
     </section>
 
-    <section id="tentang">
+    <section class="content-section" id="tentang">
       <div class="container">
         <p class="eyebrow">Tentang Saya</p>
         <h2 class="section-title">Berpikir besar. Terus berkembang.</h2>
@@ -303,7 +439,7 @@
       </div>
     </section>
 
-    <section id="minat">
+    <section class="content-section" id="minat">
       <div class="container">
         <p class="eyebrow">Fokus & Minat</p>
         <h2 class="section-title">Hal yang ingin saya kembangkan.</h2>
@@ -330,7 +466,7 @@
       </div>
     </section>
 
-    <section id="tujuan">
+    <section class="content-section" id="tujuan">
       <div class="container">
         <p class="eyebrow">Visi Masa Depan</p>
         <h2 class="section-title">Bertumbuh dengan tujuan.</h2>
@@ -342,7 +478,7 @@
       </div>
     </section>
 
-    <section id="kontak">
+    <section class="content-section" id="kontak">
       <div class="container">
         <p class="eyebrow">Mari Terhubung</p>
         <h2 class="section-title">Hubungi Saya</h2>
@@ -362,7 +498,6 @@
           </button>
 
           <div id="contact-options">
-            <!-- Ganti atau hapus tautan sesuai kebutuhanmu -->
             <a class="contact-link"
                href="https://wa.me/6285177173031"
                target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
@@ -385,7 +520,7 @@
 
   <footer>
     <div class="container">
-      © <span id="year"></span> Lighepe Official. Dibuat dengan semangat berkembang.
+      © <span id="year"></span> Alighepe Official. Dibuat dengan semangat berkembang.
     </div>
   </footer>
 
