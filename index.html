@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -48,6 +49,10 @@ a {
 
 button, a {
   -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font-family: inherit;
 }
 
 .container {
@@ -495,45 +500,170 @@ section.content-section {
   max-width: 750px;
 }
 
-/* KONTAK - SUDAH DIGABUNG DAN DIPERBAIKI */
+/* PENUTUP PREMIUM ALIGHEPE OFFICIAL */
 
-.contact-panel {
-  margin-top: 25px;
-  padding: 25px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--panel);
+.ao-contact-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 0%,rgba(91,133,220,.16),transparent 60%),
+    linear-gradient(180deg,#090a0d,#070809);
 }
 
-#contact-options {
-  display: none;
-  margin-top: 18px;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 12px;
-  width: 100%;
-}
-
-#contact-options.show {
-  display: grid !important;
-}
-
-.contact-link {
-  display: block;
-  width: 100%;
-  padding: 13px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  color: var(--text);
+.ao-contact-shell {
+  max-width: 850px;
+  margin: auto;
+  padding: clamp(28px,6vw,58px);
   text-align: center;
-  visibility: visible;
-  opacity: 1;
-  transition: .25s;
+  border: 1px solid rgba(220,228,245,.17);
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at 50% 0%,rgba(91,133,220,.12),transparent 65%),
+    linear-gradient(145deg,rgba(19,22,29,.97),rgba(9,10,13,.98));
+  box-shadow: 0 20px 80px rgba(0,0,0,.22);
 }
 
-.contact-link:hover {
-  border-color: #aebbd5;
-  background: #171b23;
-  transform: translateY(-2px);
+.ao-contact-brand {
+  color: #c4d1e9;
+  font-size: .72rem;
+  letter-spacing: 4px;
+  font-weight: 700;
+  margin-bottom: 17px;
+}
+
+.ao-contact-title {
+  font-size: clamp(2rem,7vw,3.8rem);
+  letter-spacing: -1.5px;
+  line-height: 1.12;
+  margin-bottom: 20px;
+}
+
+.ao-contact-desc {
+  max-width: 540px;
+  color: var(--muted);
+  margin: 0 auto 30px;
+}
+
+.ao-contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-width: 205px;
+  padding: 14px 23px;
+  color: #08090c;
+  background: linear-gradient(135deg,#f5f7ff,#b7c7e7);
+  border: 1px solid #e1e8f7;
+  border-radius: 40px;
+  font-size: .95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(156,188,255,.12);
+  transition: transform .25s,box-shadow .25s;
+}
+
+.ao-contact-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 35px rgba(156,188,255,.25);
+}
+
+.ao-contact-button:focus-visible,
+.ao-social-link:focus-visible {
+  outline: 2px solid #e1e8f7;
+  outline-offset: 5px;
+}
+
+.ao-arrow {
+  display: inline-block;
+  font-size: 1.15rem;
+  transition: transform .25s;
+}
+
+.ao-contact-button[aria-expanded="true"] .ao-arrow {
+  transform: rotate(180deg);
+}
+
+.ao-social-heading {
+  margin-top: 36px;
+  color: #c4d1e9;
+  font-size: .7rem;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.ao-social-links {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 13px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.ao-social-links[hidden] {
+  display: none !important;
+}
+
+.ao-social-link {
+  display: grid;
+  grid-template-columns: 43px minmax(0,1fr);
+  grid-template-rows: auto auto;
+  align-items: center;
+  column-gap: 13px;
+  padding: 17px;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255,255,255,.018);
+  transition: border-color .25s,background .25s,transform .25s;
+}
+
+.ao-social-link:hover {
+  border-color: #8c9fbe;
+  background: rgba(174,199,255,.055);
+  transform: translateY(-3px);
+}
+
+.ao-social-icon {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border: 1px solid rgba(220,228,245,.2);
+  border-radius: 12px;
+  color: #dce4f5;
+  background: rgba(220,228,245,.04);
+}
+
+.ao-social-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ao-social-name {
+  align-self: end;
+  font-weight: 700;
+  font-size: .95rem;
+}
+
+.ao-social-handle {
+  align-self: start;
+  color: var(--muted);
+  font-size: .78rem;
+  overflow-wrap: anywhere;
+}
+
+.ao-contact-note {
+  color: #858b99;
+  font-size: .73rem;
+  letter-spacing: 1.5px;
+  margin-top: 34px;
 }
 
 footer {
@@ -576,7 +706,7 @@ footer {
     padding: 58px 0;
   }
 
-  #contact-options.show {
+  .ao-social-links {
     grid-template-columns: 1fr;
   }
 
@@ -599,6 +729,14 @@ footer {
   .timeline-card {
     padding: 18px;
   }
+
+  .ao-contact-shell {
+    border-radius: 18px;
+  }
+
+  .ao-contact-title {
+    letter-spacing: -1px;
+  }
 }
 
 @media (max-width: 380px) {
@@ -616,6 +754,15 @@ footer {
 
   .eyebrow {
     letter-spacing: 2px;
+  }
+
+  .ao-contact-brand {
+    letter-spacing: 2px;
+  }
+
+  .ao-contact-button {
+    min-width: 0;
+    width: 100%;
   }
 }
 
@@ -802,6 +949,7 @@ footer {
   </section>
 
   <!-- VISI MASA DEPAN -->
+  
   <section class="content-section" id="tujuan">
     <div class="container">
       <p class="eyebrow">Visi Masa Depan</p>
@@ -820,51 +968,88 @@ footer {
     </div>
   </section>
 
-  <!-- KONTAK -->
-  <section class="content-section" id="kontak">
+  <!-- PENUTUP PREMIUM ALIGHEPE OFFICIAL -->
+  <section class="content-section ao-contact-section" id="kontak">
     <div class="container">
-      <p class="eyebrow">Mari Terhubung</p>
-      <h2 class="section-title">Hubungi Saya</h2>
-      <p class="section-desc">
-        Pilih platform yang paling nyaman untuk menghubungi saya.
-      </p>
+      <div class="ao-contact-shell">
+        <p class="ao-contact-brand">ALIGHEPE OFFICIAL</p>
 
-      <div class="contact-panel">
+        <h2 class="ao-contact-title">Let's Build The Future.</h2>
+
+        <p class="ao-contact-desc">
+          Ide besar dimulai dari langkah kecil.
+          Mari terhubung dan membuka peluang baru.
+        </p>
+
         <button
-          class="button"
+          class="ao-contact-button"
           id="contact-button"
           type="button"
           aria-expanded="false"
           aria-controls="contact-options"
-        >Hubungi Saya +</button>
+        >
+          <span id="contact-button-text">Hubungi Saya</span>
+          <span class="ao-arrow" aria-hidden="true">↓</span>
+        </button>
 
-        <div id="contact-options">
+        <p class="ao-social-heading">CONNECT WITH ME</p>
+
+        <div class="ao-social-links" id="contact-options" hidden>
           <a
-            class="contact-link"
+            class="ao-social-link"
             href="https://wa.me/6285177173031"
             target="_blank"
             rel="noopener noreferrer"
-          >WhatsApp ↗</a>
+            aria-label="Hubungi melalui WhatsApp"
+          >
+            <span class="ao-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/>
+                <path d="M9 8.5c.5 2.5 2 4 4.5 5"/>
+                <path d="m9 8.5 1.2-1.2M13.5 13.5l1.2-1"/>
+              </svg>
+            </span>
+            <span class="ao-social-name">WhatsApp</span>
+            <span class="ao-social-handle">0851 7717 3031</span>
+          </a>
 
           <a
-            class="contact-link"
+            class="ao-social-link"
             href="https://instagram.com/guwepehasli"
             target="_blank"
             rel="noopener noreferrer"
-          >Instagram ↗</a>
+            aria-label="Kunjungi Instagram"
+          >
+            <span class="ao-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M17.5 6.5h.01"/>
+              </svg>
+            </span>
+            <span class="ao-social-name">Instagram</span>
+            <span class="ao-social-handle">@guwepehasli</span>
+          </a>
 
           <a
-            class="contact-link"
+            class="ao-social-link"
             href="mailto:ayumutoharoh@gmail.com"
-          >Email ↗</a>
-
-          <a
-            class="contact-link"
-            href="https://www.tiktok.com/@al1gp"
-            target="_blank"
-            rel="noopener noreferrer"
-          >TikTok ↗</a>
+            aria-label="Kirim Email"
+          >
+            <span class="ao-social-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="m4 7 8 6 8-6"/>
+              </svg>
+            </span>
+            <span class="ao-social-name">Email</span>
+            <span class="ao-social-handle">Kirim pesan</span>
+          </a>
         </div>
+
+        <p class="ao-contact-note">
+          Personal Branding · Business · Growth
+        </p>
       </div>
     </div>
   </section>
@@ -882,6 +1067,7 @@ footer {
 document.addEventListener("DOMContentLoaded", function () {
   const button = document.getElementById("contact-button");
   const options = document.getElementById("contact-options");
+  const buttonText = document.getElementById("contact-button-text");
   const year = document.getElementById("year");
 
   if (year) {
@@ -890,15 +1076,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (button && options) {
     button.addEventListener("click", function () {
-      const isOpen = options.classList.toggle("show");
+      const isOpen = button.getAttribute("aria-expanded") !== "true";
 
       button.setAttribute("aria-expanded", String(isOpen));
-      button.textContent = isOpen
-        ? "Tutup Kontak −"
-        : "Hubungi Saya +";
+      options.hidden = !isOpen;
+
+      if (buttonText) {
+        buttonText.textContent = isOpen
+          ? "Tutup Kontak"
+          : "Hubungi Saya";
+      }
     });
   }
 });
 </script>
 </body>
-  </html>
+</html>
+
+
+  
+          
+
+          
+          
