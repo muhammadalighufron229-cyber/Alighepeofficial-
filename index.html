@@ -2,551 +2,824 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080808">
-<meta name="description" content="Alighepe Official — Business, Technology & Growth">
-<title>Alighepe Official | Personal Branding & Portofolio</title>
-<meta name="description" content="Situs resmi Alighepe Official oleh Muhammad Ali Ghufron. Berfokus pada pengembangan diri, bisnis, trading, dan teknologi digital.">
-<meta name="keywords" content="Alighepe Official, Muhammad Ali Ghufron, Personal Branding, Portofolio Bisnis, Trading">
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Situs resmi Alighepe Official oleh Muhammad Ali Ghufron. Berfokus pada pengembangan diri, bisnis, trading, dan teknologi digital.">
+  <meta name="keywords" content="Alighepe Official, Muhammad Ali Ghufron, Personal Branding, Portofolio Bisnis, Trading">
+  <meta name="author" content="Alighepe Official">
+  <meta property="og:title" content="Alighepe Official | Personal Branding & Portofolio">
+  <meta property="og:description" content="Membangun masa depan melalui bisnis, teknologi, kreativitas, dan pengembangan diri.">
+  <meta property="og:type" content="website">
 
-<style>
-:root {
-  --bg: #070809;
-  --panel: #101216;
-  --text: #f5f6fa;
-  --muted: #a4a8b2;
-  --silver: #dce4f5;
-  --line: #272b34;
-}
+  <title>Alighepe Official | Personal Branding & Portofolio</title>
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <style>
+    :root {
+      --bg: #070809;
+      --panel: #101216;
+      --text: #f5f6fa;
+      --muted: #a4a8b2;
+      --silver: #dce4f5;
+      --blue: #9cbcff;
+      --line: #272b34;
+    }
 
-html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.7;
-}
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 25px;
+    }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-.container {
-  width: min(1050px, 90%);
-  margin: auto;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-header {
-  position: relative;
-  z-index: 5;
-  background: rgba(7,8,9,.9);
-  border-bottom: 1px solid var(--line);
-}
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
 
-nav {
-  min-height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
+    .container {
+      width: min(1050px, 90%);
+      margin: auto;
+    }
 
-.logo {
-  font-size: 1.1rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
+    header {
+      position: relative;
+      z-index: 5;
+      background: rgba(7, 8, 9, .92);
+      border-bottom: 1px solid var(--line);
+    }
 
-.logo span, h1 span { color: #aebbd5; }
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
 
-.nav-link {
-  color: var(--muted);
-  font-size: .9rem;
-}
+    .logo {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
 
-/* HERO: LATAR CAHAYA BERGELOMBANG */
-.hero {
-  min-height: 590px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 85px 0 75px;
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse at 50% 30%,
-      rgba(54,69,97,.16), transparent 43%),
-    linear-gradient(180deg,#090b10,#070809 90%);
-}
+    .logo span,
+    h1 span {
+      color: #aebbd5;
+    }
 
-/* Cahaya kabut bergerak */
-.hero::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  width: 150%;
-  height: 340px;
-  top: 3%;
-  left: -150%;
-  pointer-events: none;
-  opacity: 0;
-  background:
-    radial-gradient(ellipse at center,
-      rgba(174,199,255,.18),
-      transparent 65%);
-  filter: blur(28px);
-  transform: rotate(-12deg);
-  animation: mistMove 9s ease-in-out infinite;
-}
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
 
-/* Gelombang cahaya perak */
-.light-waves {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  overflow: hidden;
-  pointer-events: none;
-}
+    .nav-link {
+      color: var(--muted);
+      font-size: .88rem;
+      transition: color .25s;
+    }
 
-.wave {
-  position: absolute;
-  left: -30%;
-  width: 160%;
-  height: 170px;
-  border-radius: 50%;
-  border-top: 2px solid rgba(224,234,255,.65);
-  filter: drop-shadow(0 0 7px rgba(173,201,255,.7))
-          drop-shadow(0 0 22px rgba(142,177,255,.28));
-  opacity: 0;
-}
+    .nav-link:hover {
+      color: var(--silver);
+    }
 
-.wave-one {
-  top: 23%;
-  transform: rotate(-10deg);
-  animation: waveOne 8s ease-in-out infinite;
-}
+    /* HERO FUTURISTIK */
 
-.wave-two {
-  top: 35%;
-  border-top-width: 1px;
-  border-color: rgba(255,255,255,.48);
-  transform: rotate(8deg);
-  animation: waveTwo 10s ease-in-out infinite;
-  animation-delay: -3s;
-}
+    .hero {
+      min-height: 660px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 75px 0 85px;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 50% 23%, rgba(54, 69, 97, .25), transparent 45%),
+        linear-gradient(180deg, #090b10, #070809 95%);
+    }
 
-.wave-three {
-  top: 44%;
-  border-top-width: 1px;
-  border-color: rgba(158,188,255,.55);
-  transform: rotate(-5deg);
-  animation: waveThree 7s ease-in-out infinite;
-  animation-delay: -2s;
-}
+    .hero::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 150%;
+      height: 340px;
+      top: 3%;
+      left: -150%;
+      pointer-events: none;
+      background: radial-gradient(ellipse at center, rgba(174, 199, 255, .18), transparent 65%);
+      filter: blur(28px);
+      transform: rotate(-12deg);
+      animation: mistMove 9s ease-in-out infinite;
+    }
 
-.wave-four {
-  top: 16%;
-  height: 230px;
-  border-top-width: 1px;
-  border-color: rgba(255,255,255,.25);
-  transform: rotate(12deg);
-  animation: waveTwo 12s ease-in-out infinite;
-  animation-delay: -6s;
-}
+    .light-waves {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
 
-@keyframes mistMove {
-  0% { left: -150%; opacity: 0; }
-  20% { opacity: 1; }
-  75% { opacity: .8; }
-  100% { left: 100%; opacity: 0; }
-}
+    .wave {
+      position: absolute;
+      left: -30%;
+      width: 160%;
+      height: 170px;
+      border-radius: 50%;
+      border-top: 2px solid rgba(224, 234, 255, .65);
+      filter:
+        drop-shadow(0 0 7px rgba(173, 201, 255, .7))
+        drop-shadow(0 0 22px rgba(142, 177, 255, .28));
+      opacity: 0;
+    }
 
-@keyframes waveOne {
-  0% { left: -70%; opacity: 0; transform: translateY(35px) rotate(-10deg); }
-  25% { opacity: .8; }
-  70% { opacity: .65; }
-  100% { left: 10%; opacity: 0; transform: translateY(-25px) rotate(-5deg); }
-}
+    .wave-one {
+      top: 23%;
+      animation: waveOne 8s ease-in-out infinite;
+    }
 
-@keyframes waveTwo {
-  0% { left: 10%; opacity: 0; transform: translateY(-20px) rotate(8deg); }
-  25% { opacity: .75; }
-  75% { opacity: .6; }
-  100% { left: -55%; opacity: 0; transform: translateY(30px) rotate(3deg); }
-}
+    .wave-two {
+      top: 35%;
+      border-top-width: 1px;
+      border-color: rgba(255, 255, 255, .48);
+      animation: waveTwo 10s ease-in-out infinite;
+      animation-delay: -3s;
+    }
 
-@keyframes waveThree {
-  0% { left: -50%; opacity: 0; transform: translateY(15px) rotate(-5deg); }
-  25% { opacity: .8; }
-  70% { opacity: .5; }
-  100% { left: 15%; opacity: 0; transform: translateY(-20px) rotate(-12deg); }
-}
+    .wave-three {
+      top: 44%;
+      border-top-width: 1px;
+      border-color: rgba(158, 188, 255, .55);
+      animation: waveThree 7s ease-in-out infinite;
+      animation-delay: -2s;
+    }
 
-.hero .container {
-  position: relative;
-  z-index: 1;
-}
+    .wave-four {
+      top: 16%;
+      height: 230px;
+      border-top-width: 1px;
+      border-color: rgba(255, 255, 255, .25);
+      animation: waveTwo 12s ease-in-out infinite;
+      animation-delay: -6s;
+    }
 
-/* FOTO BULAT, UKURAN TETAP */
-.profile {
-  width: 150px;
-  height: 150px;
-  aspect-ratio: 1 / 1;
-  margin: 0 auto 26px;
-  position: relative;
-  isolation: isolate;
-  border-radius: 50%;
-  background: #111319;
-  border: 1px solid rgba(222,232,255,.7);
-  box-shadow:
-    0 0 20px rgba(180,205,255,.15),
-    0 0 55px rgba(135,170,255,.12);
-}
+    @keyframes mistMove {
+      0% { left: -150%; opacity: 0; }
+      20% { opacity: 1; }
+      75% { opacity: .8; }
+      100% { left: 100%; opacity: 0; }
+    }
 
-.profile-frame {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  border-radius: 50%;
-}
+    @keyframes waveOne {
+      0% { left: -70%; opacity: 0; transform: translateY(35px) rotate(-10deg); }
+      25% { opacity: .8; }
+      70% { opacity: .65; }
+      100% { left: 10%; opacity: 0; transform: translateY(-25px) rotate(-5deg); }
+    }
 
-.profile-frame img {
-  display: block;
-  width: 100% !important;
-  height: 100% !important;
-  max-width: none;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 50% !important;
-}
+    @keyframes waveTwo {
+      0% { left: 10%; opacity: 0; transform: translateY(-20px) rotate(8deg); }
+      25% { opacity: .75; }
+      75% { opacity: .6; }
+      100% { left: -55%; opacity: 0; transform: translateY(30px) rotate(3deg); }
+    }
 
-/* Garis cahaya tipis di sisi luar foto */
-.profile::before {
-  content: "";
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  padding: 1.5px;
-  background: conic-gradient(
-    transparent 0deg,
-    transparent 235deg,
-    rgba(255,255,255,.95) 280deg,
-    rgba(161,195,255,.8) 305deg,
-    transparent 335deg,
-    transparent 360deg
-  );
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  animation: orbit 6s linear infinite;
-  pointer-events: none;
-  z-index: 3;
-}
+    @keyframes waveThree {
+      0% { left: -50%; opacity: 0; transform: translateY(15px) rotate(-5deg); }
+      25% { opacity: .8; }
+      70% { opacity: .5; }
+      100% { left: 15%; opacity: 0; transform: translateY(-20px) rotate(-12deg); }
+    }
 
-.profile::after {
-  content: "";
-  position: absolute;
-  inset: -9px;
-  border: 1px solid rgba(190,210,255,.13);
-  border-radius: 50%;
-  pointer-events: none;
-}
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
 
-@keyframes orbit {
-  to { transform: rotate(360deg); }
-}
+    /* FOTO PROFIL NEON */
 
-.eyebrow {
-  color: #c2cde2;
-  font-size: .72rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
+    .profile-wrap {
+      position: relative;
+      width: 190px;
+      height: 190px;
+      margin: 0 auto 32px;
+      display: grid;
+      place-items: center;
+    }
 
-h1 {
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  line-height: 1.12;
-  letter-spacing: -2px;
-  margin-bottom: 18px;
-}
+    .profile-orbit {
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(174, 199, 255, .35);
+      border-radius: 50%;
+      animation: orbit 12s linear infinite;
+    }
 
-.intro {
-  color: var(--muted);
-  max-width: 620px;
-  margin: 0 auto 28px;
-}
+    .profile-orbit::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      top: 19px;
+      left: 25px;
+      background: #e7efff;
+      box-shadow: 0 0 12px #9cbcff, 0 0 24px #719dff;
+    }
 
-.button {
-  display: inline-block;
-  border: 1px solid #cbd5e8;
-  border-radius: 30px;
-  padding: 11px 25px;
-  background: transparent;
-  color: var(--text);
-  font-weight: 600;
-  transition: .25s;
-  cursor: pointer;
-  font-size: .92rem;
-}
+    .profile-orbit.orbit-two {
+      inset: 10px -8px;
+      transform: rotate(-35deg);
+      border-color: rgba(220, 228, 245, .18);
+      animation-duration: 17s;
+      animation-direction: reverse;
+    }
 
-.button:hover {
-  background: #e7ecf7;
-  color: #08090c;
-  box-shadow: 0 0 25px rgba(180,205,255,.2);
-}
+    .profile {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, #f5f7ff, #7796d3, #202a42, #dce4f5);
+      box-shadow:
+        0 0 18px rgba(180, 205, 255, .35),
+        0 0 50px rgba(91, 133, 220, .22);
+      animation: profileGlow 4s ease-in-out infinite;
+    }
 
-section.content-section {
-  padding: 65px 0;
-  border-top: 1px solid var(--line);
-}
+    .profile-frame {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #111319;
+      border: 3px solid #080a0f;
+    }
 
-.section-title {
-  font-size: clamp(1.7rem,5vw,2.5rem);
-  line-height: 1.25;
-  margin-bottom: 15px;
-}
+    .profile-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
 
-.section-desc {
-  color: var(--muted);
-  max-width: 700px;
-}
+    @keyframes orbit {
+      to { transform: rotate(360deg); }
+    }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 16px;
-  margin-top: 28px;
-}
+    @keyframes profileGlow {
+      0%, 100% {
+        box-shadow: 0 0 18px rgba(180, 205, 255, .3), 0 0 40px rgba(91, 133, 220, .16);
+      }
+      50% {
+        box-shadow: 0 0 26px rgba(180, 205, 255, .55), 0 0 65px rgba(91, 133, 220, .3);
+      }
+    }
 
-.card {
-  background: linear-gradient(145deg,#12151b,#0c0e12);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 23px;
-  transition: .25s;
-}
+    .eyebrow {
+      color: #c2cde2;
+      font-size: .72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
 
-.card:hover {
-  border-color: #7888a5;
-  transform: translateY(-4px);
-}
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
 
-.card h3 {
-  margin-bottom: 9px;
-  font-size: 1.08rem;
-}
+    .intro {
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto 28px;
+    }
 
-.card p {
-  color: var(--muted);
-  font-size: .92rem;
-}
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
-.number {
-  color: #c4d1e9;
-  font-size: .8rem;
-  letter-spacing: 2px;
-  margin-bottom: 12px;
-}
+    .button {
+      display: inline-block;
+      border: 1px solid #cbd5e8;
+      border-radius: 30px;
+      padding: 11px 25px;
+      background: transparent;
+      color: var(--text);
+      font-weight: 600;
+      transition: .25s;
+      cursor: pointer;
+      font-size: .92rem;
+      font-family: inherit;
+    }
 
-.contact-panel {
-  margin-top: 25px;
-  padding: 25px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--panel);
-}
+    .button:hover {
+      background: #e7ecf7;
+      color: #08090c;
+      box-shadow: 0 0 25px rgba(180, 205, 255, .2);
+      transform: translateY(-2px);
+    }
 
-#contact-options {
-  display: none;
-  margin-top: 18px;
-  grid-template-columns: repeat(2,1fr);
-  gap: 12px;
-}
+    .button-secondary {
+      border-color: var(--line);
+      color: var(--muted);
+    }
 
-#contact-options.show { display: grid; }
+    /* BAGIAN UMUM */
 
-.contact-link {
-  padding: 12px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  color: var(--text);
-  text-align: center;
-}
+    section.content-section {
+      padding: 75px 0;
+      border-top: 1px solid var(--line);
+    }
 
-.contact-link:hover {
-  border-color: #aebbd5;
-  background: #171b23;
-}
+    .section-title {
+      font-size: clamp(1.7rem, 5vw, 2.5rem);
+      line-height: 1.25;
+      margin-bottom: 15px;
+    }
 
-footer {
-  border-top: 1px solid var(--line);
-  padding: 25px 0;
-  text-align: center;
-  color: var(--muted);
-  font-size: .85rem;
-}
+    .section-desc {
+      color: var(--muted);
+      max-width: 700px;
+    }
 
-@media (max-width: 650px) {
-  .cards { grid-template-columns: 1fr; }
-  .hero { min-height: 570px; }
-  h1 { letter-spacing: -1px; }
-  #contact-options { grid-template-columns: 1fr; }
-  nav { min-height: 65px; }
-  .wave { width: 200%; }
-}
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero::before, .wave, .profile::before {
-    animation: none;
-  }
-  html { scroll-behavior: auto; }
-}
-</style>
+    .card {
+      background: linear-gradient(145deg, #12151b, #0c0e12);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 24px;
+      transition: .25s;
+    }
+
+    .card:hover {
+      border-color: #7888a5;
+      transform: translateY(-4px);
+    }
+
+    .card h3 {
+      margin-bottom: 9px;
+      font-size: 1.08rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .number {
+      color: #c4d1e9;
+      font-size: .8rem;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    /* MY JOURNEY TIMELINE */
+
+    .journey-section {
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(65, 86, 128, .12), transparent 65%),
+        #08090b;
+    }
+
+    .journey-heading {
+      margin-bottom: 38px;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 5px 0;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+      left: 17px;
+      width: 1px;
+      background: linear-gradient(to bottom, #dce4f5, #536b9a, rgba(83, 107, 154, .08));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 52px;
+      padding-bottom: 30px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 9px;
+      top: 7px;
+      width: 17px;
+      height: 17px;
+      border: 2px solid #cbd9f6;
+      border-radius: 50%;
+      background: #08090b;
+      box-shadow: 0 0 14px rgba(156, 188, 255, .4);
+    }
+
+    .timeline-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: linear-gradient(145deg, rgba(20, 24, 33, .95), rgba(10, 12, 16, .95));
+      transition: border-color .25s, transform .25s;
+    }
+
+    .timeline-card:hover {
+      border-color: #65799e;
+      transform: translateX(4px);
+    }
+
+    .timeline-label {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: #c4d1e9;
+      font-size: .72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .timeline-card h3 {
+      font-size: 1.12rem;
+      margin-bottom: 7px;
+    }
+
+    .timeline-card p {
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    /* VISI MASA DEPAN */
+
+    .vision-panel {
+      margin-top: 25px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background:
+        radial-gradient(ellipse at 100% 0%, rgba(91, 133, 220, .12), transparent 55%),
+        var(--panel);
+    }
+
+    .vision-panel p {
+      color: var(--muted);
+      max-width: 750px;
+    }
+
+    /* KONTAK */
+
+    .contact-panel {
+      margin-top: 25px;
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel);
+    }
+
+    #contact-options {
+      display: none;
+      margin-top: 18px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    #contact-options.show {
+      display: grid;
+    }
+
+    .contact-link {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--text);
+      text-align: center;
+      transition: .25s;
+    }
+
+    .contact-link:hover {
+      border-color: #aebbd5;
+      background: #171b23;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 25px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .footer-brand {
+      color: #dce4f5;
+    }
+
+    @media (max-width: 700px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 0;
+        padding: 70px 0 80px;
+      }
+
+      .profile-wrap {
+        width: 170px;
+        height: 170px;
+      }
+
+      .profile {
+        width: 136px;
+        height: 136px;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+
+      section.content-section {
+        padding: 60px 0;
+      }
+
+      #contact-options {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        min-height: 65px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-link {
+        font-size: .8rem;
+      }
+
+      .wave {
+        width: 200%;
+      }
+
+      .timeline-card {
+        padding: 18px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .logo {
+        font-size: .95rem;
+      }
+
+      .nav-links {
+        gap: 9px;
+      }
+
+      .nav-link {
+        font-size: .75rem;
+      }
+
+      .eyebrow {
+        letter-spacing: 2px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<header>
-  <nav class="container">
-    <a href="#" class="logo">ALIGHEPE<span>.</span></a>
-    <a href="#tentang" class="nav-link">Tentang Saya ↘</a>
-  </nav>
-</header>
+  <header>
+    <nav class="container">
+      <a href="#" class="logo">ALIGHEPE<span>.</span></a>
 
-<main>
-  <section class="hero">
-    <div class="light-waves" aria-hidden="true">
-      <div class="wave wave-one"></div>
-      <div class="wave wave-two"></div>
-      <div class="wave wave-three"></div>
-      <div class="wave wave-four"></div>
-    </div>
+      <div class="nav-links">
+        <a href="#tentang" class="nav-link">Tentang</a>
+        <a href="#journey" class="nav-link">Journey</a>
+        <a href="#kontak" class="nav-link">Kontak ↘</a>
+      </div>
+    </nav>
+  </header>
 
-    <div class="container">
-      <div class="profile">
-        <div class="profile-frame">
-          <img src="profile.jpg"
-            alt="Foto profil Alighepe Official"
-            onerror="this.parentElement.style.display='none'">
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="light-waves" aria-hidden="true">
+        <div class="wave wave-one"></div>
+        <div class="wave wave-two"></div>
+        <div class="wave wave-three"></div>
+        <div class="wave wave-four"></div>
+      </div>
+
+      <div class="container">
+        <div class="profile-wrap">
+          <div class="profile-orbit" aria-hidden="true"></div>
+          <div class="profile-orbit orbit-two" aria-hidden="true"></div>
+
+          <div class="profile">
+            <div class="profile-frame">
+              <img
+                src="profile.jpg"
+                alt="Foto profil Alighepe Official"
+                onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#202a42,#101216)'"
+              >
+            </div>
+          </div>
+        </div>
+
+        <p class="eyebrow">Personal Branding • Business • Growth</p>
+
+        <h1>Alighepe <span>Official</span></h1>
+
+        <p class="intro">
+          Membangun masa depan melalui pola pikir bertumbuh,
+          kreativitas, teknologi, dan semangat berwirausaha.
+          Berproses hari ini untuk menciptakan peluang esok hari.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#tentang" class="button">Kenali Saya ↘</a>
+          <a href="#journey" class="button button-secondary">My Journey ↓</a>
         </div>
       </div>
+    </section>
 
-      <p class="eyebrow">Personal Branding • Business • Growth</p>
-      <h1>Alighepe <span>Official</span></h1>
-      <p class="intro">
-        Membangun masa depan melalui pola pikir bertumbuh,
-        kreativitas, teknologi, dan semangat berwirausaha.
-        Berproses hari ini untuk menciptakan peluang esok hari.
-      </p>
-      <a href="#tentang" class="button">Kenali Saya ↘</a>
-    </div>
-  </section>
+    <!-- MY JOURNEY -->
+    <section class="content-section journey-section" id="journey">
+      <div class="container">
+        <div class="journey-heading">
+          <p class="eyebrow">My Journey</p>
+          <h2 class="section-title">Perjalanan menuju masa depan.</h2>
+          <p class="section-desc">
+            Setiap pencapaian berawal dari rasa ingin tahu, keberanian
+            untuk belajar, dan kemauan untuk terus berkembang.
+          </p>
+        </div>
 
-  <section class="content-section" id="tentang">
-    <div class="container">
-      <p class="eyebrow">Tentang Saya</p>
-      <h2 class="section-title">Berpikir besar. Terus berkembang.</h2>
-      <p class="section-desc">
-        Saya tertarik pada dunia bisnis, teknologi digital, investasi,
-        dan pengembangan diri. Saya percaya bahwa kemampuan dibangun
-        melalui proses belajar, konsistensi, dan keberanian mencoba hal baru.
-      </p>
-    </div>
-  </section>
+        <div class="timeline">
+          <article class="timeline-item">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <span class="timeline-label">Chapter 01 · Explore</span>
+              <h3>Memulai dari Rasa Ingin Tahu</h3>
+              <p>
+                Mengenal dunia bisnis, teknologi digital, dan keuangan.
+                Mengumpulkan pengetahuan serta mencari bidang yang ingin
+                dikembangkan lebih dalam.
+              </p>
+            </div>
+          </article>
 
-  <section class="content-section" id="minat">
-    <div class="container">
-      <p class="eyebrow">Fokus & Minat</p>
-      <h2 class="section-title">Hal yang ingin saya kembangkan.</h2>
-      <div class="cards">
-        <article class="card">
-          <p class="number">01 / BUSINESS</p>
-          <h3>Entrepreneurship</h3>
-          <p>Mempelajari strategi bisnis, membangun merek, dan menciptakan peluang usaha.</p>
-        </article>
-        <article class="card">
-          <p class="number">02 / FINANCE</p>
-          <h3>Trading & Keuangan</h3>
-          <p>Mempelajari pasar keuangan, analisis, manajemen risiko, dan disiplin finansial.</p>
-        </article>
-        <article class="card">
-          <p class="number">03 / TECHNOLOGY</p>
-          <h3>Teknologi Digital</h3>
-          <p>Mengeksplorasi website, kecerdasan buatan, dan kreativitas di dunia digital.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+          <article class="timeline-item">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <span class="timeline-label">Chapter 02 · Build</span>
+              <h3>Membangun Skill dan Personal Brand</h3>
+              <p>
+                Mengembangkan kemampuan, mencoba proyek digital,
+                mempelajari strategi bisnis, dan membangun identitas
+                Alighepe Official secara bertahap.
+              </p>
+            </div>
+          </article>
 
-  <section class="content-section" id="tujuan">
-    <div class="container">
-      <p class="eyebrow">Visi Masa Depan</p>
-      <h2 class="section-title">Bertumbuh dengan tujuan.</h2>
-      <p class="section-desc">
-        Saya ingin mengembangkan kemampuan, membangun usaha yang bernilai,
-        memahami keuangan dengan bijak, dan menciptakan karya digital
-        yang bermanfaat bagi banyak orang.
-      </p>
-    </div>
-  </section>
+          <article class="timeline-item">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <span class="timeline-label">Chapter 03 · Grow</span>
+              <h3>Bertumbuh dengan Konsisten</h3>
+              <p>
+                Belajar dari pengalaman, memperbaiki strategi, memahami
+                risiko, dan mengubah ide menjadi karya yang bermanfaat.
+              </p>
+            </div>
+          </article>
 
-  <section class="content-section" id="kontak">
-    <div class="container">
-      <p class="eyebrow">Mari Terhubung</p>
-      <h2 class="section-title">Hubungi Saya</h2>
-      <p class="section-desc">Pilih platform yang paling nyaman untuk menghubungi saya.</p>
-
-      <div class="contact-panel">
-        <button class="button" id="contact-button"
-          type="button" aria-expanded="false"
-          aria-controls="contact-options">Hubungi Saya +</button>
-
-        <div id="contact-options">
-          <a class="contact-link" href="https://wa.me/6285177173031"
-            target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
-          <a class="contact-link" href="https://instagram.com/guwepehasli"
-            target="_blank" rel="noopener noreferrer">Instagram ↗</a>
-          <a class="contact-link" href="mailto:ayumutoharoh@gmail.com">Email ↗</a>
-          <a class="contact-link" href="https://www.tiktok.com/@al1gp"
-            target="_blank" rel="noopener noreferrer">TikTok ↗</a>
+          <article class="timeline-item">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <span class="timeline-label">Chapter 04 · Future</span>
+              <h3>Menciptakan Peluang Masa Depan</h3>
+              <p>
+                Memiliki visi untuk membangun usaha yang bernilai,
+                memperluas wawasan, dan menciptakan dampak positif
+                melalui kreativitas serta teknologi.
+              </p>
+            </div>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
 
-<footer>
-  <div class="container">
-    © <span id="year"></span> Alighepe Official. Dibuat dengan semangat berkembang.
-  </div>
-</footer>
+    <!-- TENTANG SAYA -->
+    <section class="content-section" id="tentang">
+      <div class="container">
+        <p class="eyebrow">Tentang Saya</p>
+        <h2 class="section-title">Berpikir besar. Terus berkembang.</h2>
 
-<script>
-const contactButton = document.getElementById("contact-button");
-const contactOptions = document.getElementById("contact-options");
+        <p class="section-desc">
+          Saya tertarik pada dunia bisnis, teknologi digital, investasi,
+          dan pengembangan diri. Saya percaya bahwa kemampuan dibangun
+          melalui proses belajar, konsistensi, dan keberanian mencoba
+          hal baru.
+        </p>
+      </div>
+    </section>
 
-contactButton.addEventListener("click", function () {
-  const isOpen = contactOptions.classList.toggle("show");
-  contactButton.setAttribute("aria-expanded", String(isOpen));
-  contactButton.textContent = isOpen ? "Tutup Kontak −" : "Hubungi Saya +";
-});
+    <!-- MINAT -->
+    <section class="content-section" id="minat">
+      <div class="container">
+        <p class="eyebrow">Fokus & Minat</p>
+        <h2 class="section-title">Hal yang ingin saya kembangkan.</h2>
 
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-</body>
-  </html>
-  
+        <div class="cards">
+          <article class="card">
+            <p class="number">01 / BUSINESS</p>
+            <h3>Entrepreneurship</h3>
+            <p>
+              Mempelajari strategi bisnis, membangun merek,
+              dan menciptakan peluang usaha.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="number">02 / FINANCE</p>
+            <h3>Trading & Keuangan</h3>
+            <p>
+              Mempelajari pasar keuangan, analisis, manajemen risiko,
+              dan disiplin finansial.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="number">03 / TECHNOLOGY</p>
+            <h3>Teknologi Digital</h3>
+            <p>
+              Mengeksplorasi website, kecerdasan buatan,
+              dan kreativitas di dunia digital.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISI MASA DEPAN -->
+    <section class="content-section" id="tujuan">
+      <div class="container">
+        <p class="eyebrow">Visi Masa Depan</p>
+        <h2 class="section-title">Bertumbuh dengan tujuan.</h2>
+
+        <div class="vision-panel">
+          <p>
+            Saya ingin mengembangkan kemampuan, membangun usaha yang
+            bernilai, memahami keuangan dengan bijak, dan mencipta
