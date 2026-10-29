@@ -776,86 +776,111 @@ footer {
 }
   
 /* MY SOUNDTRACK */
-#my-soundtrack {
-  margin-top: 48px;
-  margin-bottom: 48px;
-}
 
-#my-soundtrack .ao-section-heading {
-  margin-bottom: 24px;
-}
-
-#my-soundtrack .ao-eyebrow {
-  color: #91bfff;
-  font-size: 11px;
-  letter-spacing: 2.5px;
-  font-weight: 700;
-}
-
-#my-soundtrack .ao-section-heading h2 {
+#my-soundtrack .ao-music-player {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 16px;
+  box-sizing: border-box;
   color: #f5f5f5;
-  font-size: clamp(28px, 5vw, 42px);
-  margin: 10px 0;
+  background: #101216;
+  border: 1px solid #343943;
+  border-radius: 18px;
 }
 
-#my-soundtrack .ao-section-heading h2 span {
+.ao-music-heading {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.ao-music-heading h3 {
+  margin: 8px 0;
+  font-size: 25px;
+}
+
+.ao-music-heading h3 span,
+.ao-music-label {
   color: #91bfff;
 }
 
-#my-soundtrack .ao-section-heading p {
-  color: #a7a7a7;
-  line-height: 1.8;
+.ao-music-label {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
 }
 
-#my-soundtrack .ao-soundtrack-card {
-  background: linear-gradient(145deg, #15191f, #08090b);
-  border: 1px solid #343b46;
-  border-radius: 20px;
-  padding: clamp(16px, 4vw, 26px);
-  box-shadow: 0 12px 36px #0005;
+.ao-music-heading p,
+.ao-music-list small {
+  color: #a8adb7;
+  font-size: 12px;
 }
 
-#my-soundtrack .ao-soundtrack-info {
+.ao-music-feature {
+  padding: 13px;
+  border-radius: 14px;
+  background: #191d24;
+}
+
+.ao-music-feature h4 {
+  margin: 0 0 12px;
+  font-size: 15px;
+}
+
+.ao-music-feature iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+}
+
+.ao-music-list {
+  margin-top: 20px;
+}
+
+.ao-music-list > p {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #a9caff;
+}
+
+.ao-music-list button {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 22px;
+  gap: 12px;
+  width: 100%;
+  padding: 13px 4px;
+  color: #f5f5f5;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #292d35;
+  text-align: left;
+  cursor: pointer;
 }
 
-#my-soundtrack .ao-music-symbol {
-  width: 54px;
-  height: 54px;
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  border: 1px solid #7289a8;
-  border-radius: 15px;
-  color: #b9d5ff;
-  font-size: 30px;
-  background: #172231;
+.ao-music-list button span:nth-child(2) {
+  flex: 1;
 }
 
-#my-soundtrack .ao-soundtrack-info h3 {
-  margin: 7px 0;
-  color: #fff;
-}
-
-#my-soundtrack .ao-soundtrack-info p,
-#my-soundtrack .ao-soundtrack-note {
-  color: #a7a7a7;
-  font-size: 13px;
-  line-height: 1.7;
-}
-
-#my-soundtrack .ao-soundtrack-note {
-  margin: 16px 0 0;
-  text-align: center;
-}
-
-#my-soundtrack iframe {
+.ao-music-list b,
+.ao-music-list small {
   display: block;
-  max-width: 100%;
-  }
+}
+
+.ao-music-list b {
+  font-size: 13px;
+}
+
+.ao-music-list small {
+  margin-top: 4px;
+}
+
+.ao-music-list button > span:first-child,
+.ao-music-list button > span:last-child {
+  color: #91bfff;
+  font-size: 12px;
+    }
+  
   
 /* Ukuran My Soundtrack yang lebih compact */
   
@@ -1082,77 +1107,67 @@ footer {
   
 <!-- MY SOUNDTRACK -->
   
-<section id="my-soundtrack" class="ao-section">
-  <div class="ao-section-heading">
-    <span class="ao-eyebrow">MY PERSONAL SOUNDTRACK</span>
-    <h2>My Soundtrack<span>.</span></h2>
-    <p>
-      Musik yang menemani proses, ide, dan perjalanan menuju masa depan.
-    </p>
+
+<div class="ao-music-player" id="aoMusicPlayer">
+
+  <div class="ao-music-heading">
+    <span class="ao-music-label">LIGHEPE OFFICIAL</span>
+    <h3>My <span>Soundtrack</span></h3>
+    <p>Lagu yang menemani setiap perjalanan.</p>
   </div>
 
-  <div class="ao-soundtrack-card">
-    <div class="ao-soundtrack-info">
-      <span class="ao-music-symbol">♫</span>
-      <div>
-        <span class="ao-eyebrow">NOW PLAYING</span>
-        <h3>My Daily Vibes</h3>
-        <p>Soundtrack untuk menemani setiap proses.</p>
-      </div>
-    </div>
-    
+  <div class="ao-music-feature">
+    <h4 id="aoSongTitle">Dari Planet Lain — Sal Priadi</h4>
 
-
-<iframe
-  width="100%"
-  src="https://www.youtube.com/embed/g0c7FeMn5lE"
-  title="Bergema Sampai Selamanya - Nadhif Basalamah"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen>
-</iframe>
-
-<div class="ao-music-list">
-  <p>Lagu lain yang mungkin kamu suka</p>
-
-  <a href="https://www.youtube.com/results?search_query=Fourtwnty+Aku+Tenang+official" target="_blank" rel="noopener noreferrer">
-    <span>01</span>
-    <span><b>Aku Tenang</b><small>Fourtwnty</small></span>
-    <span>▶ Putar</span>
-  </a>
-
-  <a href="https://www.youtube.com/results?search_query=Fourtwnty+Fana+Merah+Jambu+official" target="_blank" rel="noopener noreferrer">
-    <span>02</span>
-    <span><b>Fana Merah Jambu</b><small>Fourtwnty</small></span>
-    <span>▶ Putar</span>
-  </a>
-
-  <a href="https://www.youtube.com/results?search_query=Fourtwnty+Zona+Nyaman+official" target="_blank" rel="noopener noreferrer">
-    <span>03</span>
-    <span><b>Zona Nyaman</b><small>Fourtwnty</small></span>
-    <span>▶ Putar</span>
-  </a>
-
-  <a href="https://www.youtube.com/results?search_query=Nadhif+Basalamah+Penjaga+Hati+official" target="_blank" rel="noopener noreferrer">
-    <span>04</span>
-    <span><b>Penjaga Hati</b><small>Nadhif Basalamah</small></span>
-    <span>▶ Putar</span>
-  </a>
-
-  <a href="https://www.youtube.com/results?search_query=Hindia+Secukupnya+official" target="_blank" rel="noopener noreferrer">
-    <span>05</span>
-    <span><b>Secukupnya</b><small>Hindia</small></span>
-    <span>▶ Putar</span>
-  </a>
+    <iframe
+      id="aoSpotifyFrame"
+      src="https://open.spotify.com/embed/search/Dari%20Planet%20Lain%20Sal%20Priadi?theme=0"
+      width="100%"
+      height="152"
+      frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
   </div>
-    
-    
 
-    <p class="ao-soundtrack-note">
-      Powered by Spotify · Putar musik favoritmu di sini.
-    </p>
+  <div class="ao-music-list">
+    <p>PILIH LAGU</p>
+
+    <button type="button"
+      onclick="aoPlaySong('Dari Planet Lain — Sal Priadi','Dari%20Planet%20Lain%20Sal%20Priadi')">
+      <span>01</span><span><b>Dari Planet Lain</b><small>Sal Priadi</small></span><span>▶</span>
+    </button>
+
+    <button type="button"
+      onclick="aoPlaySong('Bergema Sampai Selamanya — Nadhif Basalamah','Bergema%20Sampai%20Selamanya%20Nadhif%20Basalamah')">
+      <span>02</span><span><b>Bergema Sampai Selamanya</b><small>Nadhif Basalamah</small></span><span>▶</span>
+    </button>
+
+    <button type="button"
+      onclick="aoPlaySong('Aku Tenang — Fourtwnty','Aku%20Tenang%20Fourtwnty')">
+      <span>03</span><span><b>Aku Tenang</b><small>Fourtwnty</small></span><span>▶</span>
+    </button>
+
+    <button type="button"
+      onclick="aoPlaySong('Fana Merah Jambu — Fourtwnty','Fana%20Merah%20Jambu%20Fourtwnty')">
+      <span>04</span><span><b>Fana Merah Jambu</b><small>Fourtwnty</small></span><span>▶</span>
+    </button>
+
+    <button type="button"
+      onclick="aoPlaySong('Secukupnya — Hindia','Secukupnya%20Hindia')">
+      <span>05</span><span><b>Secukupnya</b><small>Hindia</small></span><span>▶</span>
+    </button>
   </div>
-</section>
+</div>
+
+<script>
+function aoPlaySong(title, query) {
+  document.getElementById('aoSongTitle').textContent = title;
+  document.getElementById('aoSpotifyFrame').src =
+    'https://open.spotify.com/embed/search/' + query + '?theme=0';
+}
+</script>
+  
 
   <!-- PENUTUP PREMIUM ALIGHEPE OFFICIAL -->
   
