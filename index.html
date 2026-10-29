@@ -1107,6 +1107,7 @@ footer {
   
 <!-- MY SOUNDTRACK -->
   
+<section
 
 <div class="ao-music-player" id="aoMusicPlayer">
 
@@ -1117,13 +1118,19 @@ footer {
   </div>
 
   <div class="ao-music-feature">
+    <div class="ao-music-now">
+      <span class="ao-music-dot"></span>
+      <span>NOW PLAYING</span>
+    </div>
+
     <h4 id="aoSongTitle">Dari Planet Lain — Sal Priadi</h4>
 
     <iframe
       id="aoSpotifyFrame"
       src="https://open.spotify.com/embed/search/Dari%20Planet%20Lain%20Sal%20Priadi?theme=0"
+      title="Spotify Music Player"
       width="100%"
-      height="152"
+      height="352"
       frameborder="0"
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       loading="lazy">
@@ -1131,31 +1138,36 @@ footer {
   </div>
 
   <div class="ao-music-list">
-    <p>PILIH LAGU</p>
+    <p class="ao-list-title">PILIH LAGU LAIN</p>
 
-    <button type="button"
-      onclick="aoPlaySong('Dari Planet Lain — Sal Priadi','Dari%20Planet%20Lain%20Sal%20Priadi')">
-      <span>01</span><span><b>Dari Planet Lain</b><small>Sal Priadi</small></span><span>▶</span>
+    <button type="button" onclick="aoPlaySong('Dari Planet Lain — Sal Priadi','Dari%20Planet%20Lain%20Sal%20Priadi')">
+      <span>01</span>
+      <span><b>Dari Planet Lain</b><small>Sal Priadi</small></span>
+      <span>▶</span>
     </button>
 
-    <button type="button"
-      onclick="aoPlaySong('Bergema Sampai Selamanya — Nadhif Basalamah','Bergema%20Sampai%20Selamanya%20Nadhif%20Basalamah')">
-      <span>02</span><span><b>Bergema Sampai Selamanya</b><small>Nadhif Basalamah</small></span><span>▶</span>
+    <button type="button" onclick="aoPlaySong('Bergema Sampai Selamanya — Nadhif Basalamah','Bergema%20Sampai%20Selamanya%20Nadhif%20Basalamah')">
+      <span>02</span>
+      <span><b>Bergema Sampai Selamanya</b><small>Nadhif Basalamah</small></span>
+      <span>▶</span>
     </button>
 
-    <button type="button"
-      onclick="aoPlaySong('Aku Tenang — Fourtwnty','Aku%20Tenang%20Fourtwnty')">
-      <span>03</span><span><b>Aku Tenang</b><small>Fourtwnty</small></span><span>▶</span>
+    <button type="button" onclick="aoPlaySong('Aku Tenang — Fourtwnty','Aku%20Tenang%20Fourtwnty')">
+      <span>03</span>
+      <span><b>Aku Tenang</b><small>Fourtwnty</small></span>
+      <span>▶</span>
     </button>
 
-    <button type="button"
-      onclick="aoPlaySong('Fana Merah Jambu — Fourtwnty','Fana%20Merah%20Jambu%20Fourtwnty')">
-      <span>04</span><span><b>Fana Merah Jambu</b><small>Fourtwnty</small></span><span>▶</span>
+    <button type="button" onclick="aoPlaySong('Fana Merah Jambu — Fourtwnty','Fana%20Merah%20Jambu%20Fourtwnty')">
+      <span>04</span>
+      <span><b>Fana Merah Jambu</b><small>Fourtwnty</small></span>
+      <span>▶</span>
     </button>
 
-    <button type="button"
-      onclick="aoPlaySong('Secukupnya — Hindia','Secukupnya%20Hindia')">
-      <span>05</span><span><b>Secukupnya</b><small>Hindia</small></span><span>▶</span>
+    <button type="button" onclick="aoPlaySong('Secukupnya — Hindia','Secukupnya%20Hindia')">
+      <span>05</span>
+      <span><b>Secukupnya</b><small>Hindia</small></span>
+      <span>▶</span>
     </button>
   </div>
 </div>
@@ -1166,8 +1178,10 @@ function aoPlaySong(title, query) {
   document.getElementById('aoSpotifyFrame').src =
     'https://open.spotify.com/embed/search/' + query + '?theme=0';
 }
-</script>
+      </script>
+</section>
   
+
 
   <!-- PENUTUP PREMIUM ALIGHEPE OFFICIAL -->
   
