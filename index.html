@@ -1187,10 +1187,24 @@ function aoPlaySong(title, artist, query) {
   document.getElementById("aoSongTitle").textContent = title;
   document.getElementById("aoSongArtist").textContent = artist;
 
-  document.getElementById("aoSpotifyFrame").src =
-    "https://open.spotify.com/embed/search/" + query + "?theme=0";
+  const frame = document.getElementById("aoSpotifyFrame");
+
+  const tracks = {
+    "Penjaga Hati":
+      "https://open.spotify.com/embed/search/Penjaga%20Hati%20Nadhif%20Basalamah",
+    "Dari Planet Lain":
+      "https://open.spotify.com/embed/search/Dari%20Planet%20Lain%20Sal%20Priadi",
+    "Aku Tenang":
+      "https://open.spotify.com/embed/search/Aku%20Tenang%20Fourtwnty",
+    "Fana Merah Jambu":
+      "https://open.spotify.com/embed/search/Fana%20Merah%20Jambu%20Fourtwnty",
+    "Secukupnya":
+      "https://open.spotify.com/embed/search/Secukupnya%20Hindia"
+  };
+
+  frame.src = tracks[title] || "https://open.spotify.com/";
 }
-        </script>
+</script>
   
   
 
